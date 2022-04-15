@@ -42,7 +42,7 @@ git remote set-url origin https://x-access-token:${!INPUT_PUSH_TOKEN}@github.com
 git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
 git config --global --add safe.directory "${PWD}" || true
-
+export GIT_CEILING_DIRECTORIES=/github/workspace
 set -o xtrace
 
 git fetch origin $INPUT_STABLE_BRANCH
